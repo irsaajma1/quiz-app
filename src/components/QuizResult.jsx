@@ -9,7 +9,7 @@ const QuizResult=(props)=>{
        Out of :{props.totalScore}
     </div>
     
-    <button type="button" value="Next" id="next-button" onClick={props.tryAgain}> TRY AGAIN</button>
+    <button type="button" value="Next" id="tryagain-button" onClick={props.tryAgain}> TRY AGAIN</button>
       
   </div>
   </div>
