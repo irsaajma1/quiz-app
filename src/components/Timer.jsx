@@ -7,22 +7,26 @@ const Timer=(props)=>{
       intervalRef.current= setInterval(()=>{
         setCounter((cur)=> cur+1);
       },1000);
-     
-      return()=> clearInterval(intervalRef.current);
+     return ()=> clearInterval(intervalRef.current);
 
-    },[ ]);
+    },[]);
 
     useEffect(()=>{
-         if(counter === props.duration)
+        if(counter>4.7)
+        {
+            setCounter((cur)=> cur=0);
+           
+        }
+         if(counter===props.duration)
         { 
-           clearInterval(intervalRef.current);
-            setInterval(() =>{
+            console.log(counter);
+            console.log(props.duration);
+            setTimeout(() =>{
               props.onTimeUp();
              
-            },3000);
+            },300);
   
-        }
-     },[counter]);
+        }},[counter]);
     return(
         <div>
          
